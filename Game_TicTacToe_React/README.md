@@ -1,12 +1,35 @@
 # React + Vite
+ Tic Tac Toe game implemented using ReactJS, 
+**Create three components**:
+1.Square.jsx 2.app.jsx 3.Pattern.jsx
+**1.Square component:** 
+- Props: val (X, O, or empty), chooseSquare (callback when clicked).
+- Returns a div with a class square and shows the current value (val).
+- Click triggers chooseSquare.
+**2.App Component:**
+- board: An array of 9 strings representing the squares.
+- player: Tracks whose turn it is ("O" or "X").
+- result: Tracks if the game is over and the winner.
+Creating use State all this.
+**3.Pattern**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ All possible winning combinations of nested Array
+ **useeffect():**
+Runs When board Changes:when board Changes
+ -Checks for win/tie after each move.
+ -Alerts when the game is over.
+- Resets the game automatically.
+**chooseSquare(square):**
+- User clicks a square → updates the board if it's empty:
+**CheckWin():**
+- Iterates over winning Patterns (rows, columns, diagonals).
+**Tie Check:**
+checkIfTie()
+- If all squares are filled and no winner, it's a tie.
+ ****Restart**
+Clears the board and resets to initial state.
+Resets everything:
+Rendering Board:
+Renders three rows with three squares each.
+ Each square is connected to chooseSquare with its index.
+Displays reset button.

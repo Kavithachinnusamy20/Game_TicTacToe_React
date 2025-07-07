@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Square from "./Components/Square";
-import { Patterns } from "./Patterns";
+import { Patterns } from "./Pattern.js";
 
 function App() {
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     checkWin();
     checkIfTie();
-
+    //alert("useEffect Player :"+player)
     if (player == "X") {
       setPlayer("O");
     } else {
@@ -27,23 +27,29 @@ function App() {
   }, [result]);
 
   const chooseSquare = (square) => {
+   alert( "board :"+  board) ;
+   alert( "square :"+  square) ;
+   alert("Initial Player :"+ player);
     setBoard(
       board.map((val, idx) => {
         if (idx == square && val == "") {
+         //  alert("Initial inside map Player :"+ player);
           return player;
         }
-
+      //  alert("outside map Player :"+ player);
         return val;
       })
     );
   };
 
   const checkWin = () => {
-    Patterns.forEach((currPattern) => {
-      const firstPlayer = board[currPattern[0]];
+    Patterns.forEach((x) => {
+     // alert("first pattern:"+x)
+       // alert("first pattern[0]:"+x[0])
+      const firstPlayer = board[x[0]];
       if (firstPlayer == "") return;
       let foundWinningPattern = true;
-      currPattern.forEach((idx) => {
+      x.forEach((idx) => {
         if (board[idx] != firstPlayer) {
           foundWinningPattern = false;
         }
@@ -74,6 +80,8 @@ function App() {
   };
 
   return (
+    <>
+    <h1>REACT TIC TAC TOE</h1>
     <div className="App">
       <div className="board">
         <div className="row">
@@ -138,6 +146,10 @@ function App() {
         </div>
       </div>
     </div>
+    <div>
+      <button onClick={restartGame}>Reset Game</button>
+    </div>
+    </>
   );
 }
 

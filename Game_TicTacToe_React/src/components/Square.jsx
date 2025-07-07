@@ -5,7 +5,8 @@ function Square({val,chooseSquare}) {
     <div className="square" onClick={chooseSquare}>
         {val}
     </div>
-  )
+  );
 }
 
-export default Square
+
+export default Square;
