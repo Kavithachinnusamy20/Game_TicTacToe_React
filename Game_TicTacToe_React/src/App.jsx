@@ -81,7 +81,7 @@ function App() {
 
   return (
     <>
-    <h1>REACT TIC TAC TOE</h1>
+    
     <div className="App">
       <div className="board">
         <div className="row">
