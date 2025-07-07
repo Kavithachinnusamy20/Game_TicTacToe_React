@@ -27,9 +27,9 @@ function App() {
   }, [result]);
 
   const chooseSquare = (square) => {
-   alert( "board :"+  board) ;
-   alert( "square :"+  square) ;
-   alert("Initial Player :"+ player);
+  //  alert( "board :"+  board) ;
+  //  alert( "square :"+  square) ;
+  //  alert("Initial Player :"+ player);
     setBoard(
       board.map((val, idx) => {
         if (idx == square && val == "") {
@@ -146,8 +146,13 @@ function App() {
         </div>
       </div>
     </div>
-    <div>
-      <button onClick={restartGame}>Reset Game</button>
+    <div><br></br>
+      <button 
+  onClick={restartGame} 
+  style={{ backgroundColor: 'rgb(114, 182, 142)', color: 'white', padding: '10px 20px', border: 'none', borderRadius: '5px'}}
+>
+  Reset Game
+</button>
     </div>
     </>
   );
